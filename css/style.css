@@ -405,18 +405,17 @@ main #footer .right {
   font-size: 2.5em;
 }
 
-main #footer .right i {
+main #footer .right p {
   display: block;
   background: #ededed;
   color: #121212;
   padding: .4em;
-  transform: rotate(90deg);
   border-radius: 5px;
   transition: .3s;
   cursor: pointer;
 }
 
-main #footer .right i:hover {
+main #footer .right p:hover {
   background: rgba(135, 135, 135, 0.616);
 }
 
@@ -467,11 +466,11 @@ main #footer .right i:hover {
     align-items: center;
     justify-content: center;
   }
-  body main #footer .right i {
+  body main #footer .right p {
     background: #121212;
     color: #ededed;
   }
-  body main #footer .right i:hover {
+  body main #footer .right p:hover {
     color: #121212;
   }
 }

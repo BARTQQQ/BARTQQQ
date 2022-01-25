@@ -438,7 +438,7 @@ main {
             align-items: center;
             font-size: 2.5em;
 
-            i {
+            p {
                 display: block;
                 background: $primaryWhite;
                 color: $bgColor;
@@ -515,7 +515,7 @@ main {
                         justify-content: center;
                     }
                     .right {
-                        i {
+                        p {
                             background: $bgColor;
                             color: $primaryWhite;
 
