@@ -405,17 +405,22 @@ main #footer .right {
   font-size: 2.5em;
 }
 
-main #footer .right p {
-  display: block;
+main #footer .right a p {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #ededed;
   color: #121212;
-  padding: .4em;
+  width: 1em;
+  height: 1em;
+  transform: rotate(180deg);
   border-radius: 5px;
   transition: .3s;
   cursor: pointer;
 }
 
-main #footer .right p:hover {
+main #footer .right a p:hover {
   background: rgba(135, 135, 135, 0.616);
 }
 
