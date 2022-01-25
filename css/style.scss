@@ -1,0 +1,585 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;600;900&display=swap');
+
+$bgColor: #121212;
+$primaryWhite: #ededed;
+$WhiteT: rgba(237, 237, 237, 0.788);
+$GrayT: rgba(135, 135, 135, 0.616);
+$blur: blur(10px);
+
+
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+
+::-webkit-scrollbar-track {
+    background: $primaryWhite; 
+  }
+   
+::-webkit-scrollbar-thumb {
+    background: $bgColor;
+  }
+  
+::-webkit-scrollbar-thumb:hover {
+    background: $GrayT;
+  }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Roboto Slab', serif;
+}
+
+h2 {
+    font-size: 3.5em;
+    text-transform: uppercase;
+ }
+
+h3 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-size: 0.85em;
+    overflow-x: hidden;
+    background: $primaryWhite;
+    color: $bgColor;
+
+
+    nav {
+        position: fixed;
+        justify-content: space-between;
+        align-items: center;
+
+        .menu {
+            position: inherit;
+            width: 450px;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            right: 0;
+            top: 0;
+            z-index: -1;
+            font-size: 1em;
+            // display: none;
+    
+            ul {
+                list-style-type: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                margin-bottom: 15em;
+                li {
+                    a {
+                        text-align: center;
+                        text-transform: uppercase;
+                        width: 100%;
+                        font-weight: 900;
+                        display: block;
+                        color: $bgColor;
+                        padding: 1em 2em;
+                        margin: 2em 0;
+                        transition: .2s;
+    
+                        &:hover {
+                            letter-spacing: 2px;
+                        }
+                    }
+    
+                    a:nth-child(1),
+                    a:nth-child(2) {
+                        border-bottom: 2px solid $bgColor;
+                    }
+                }
+            }
+    
+            button {
+                border: 2px solid $bgColor;
+                // border-radius: 5px;
+                text-transform: uppercase;
+                font-weight: 600;
+                cursor: pointer;
+    
+                p {
+                    background: $primaryWhite;
+                    color: $bgColor;
+                    font-size: 1em;
+                    padding: 1em 2em;
+                    margin: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    position: relative;
+                    border-radius: 5px;
+                    transition: all .3s;
+    
+                    &:hover {
+                        letter-spacing: 2px;
+                    }
+
+                    &::before {
+                        content: 'Zamknij';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        z-index: -1;
+                        padding: 1em;
+                        overflow: hidden;
+    
+                        background: $bgColor;
+                        color: $primaryWhite;
+                        clip-path: circle(0% at 50% 50%);
+                        // clip-path: polygon(0% 0%, 0% 0%,-1em 100% , -1em 100%);
+                        transition: clip-path .3s, z-index .3s;
+                    }
+    
+                    &:hover:before {
+                        z-index: 1000;
+                        clip-path: circle(100% at 50% 50%);
+                        // clip-path: polygon(0% 0%,calc(100% + 1em) 0%,100% 100% , -1em 100%);
+    
+                    }
+                }
+
+            }
+        }
+    }
+
+
+}
+
+main {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    z-index: 0;
+    transition: .3s;
+    left: 0px;
+    width: 100%;
+    box-shadow: -30px 0px 100px 0px $bgColor;
+    transition: left .3s;
+
+    &.slide {
+        left: -450px;
+    }
+
+    .ham-menu {
+        position: fixed;
+        z-index: 1000;
+        top: 40px;
+        right: 0;
+        padding: 1em;
+        background: $bgColor;
+        transition: right .3s;
+        cursor: pointer;
+
+
+        &.menu-slide {
+            right: 450px;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            background: $bgColor;
+    
+            span {
+                display: block;
+                height: 4px;
+                width: 30px;
+                background: $primaryWhite;
+                border-radius: 3px;
+                transition: .2s;
+    
+                &:nth-child(1),
+                &:nth-child(2) {
+                margin-bottom: 5px;
+                }
+    
+                &:nth-child(2) {
+                width: 20px;
+                align-self: flex-start;
+                }
+            }
+
+            &:hover span:nth-child(2) {
+                width: 30px;
+            }
+
+            &.active span:nth-child(2) {
+                width: 30px;
+            }
+        }
+    }
+
+
+
+    .page {
+        background-color: $bgColor;
+        position: relative;
+    }
+
+    #one,
+    #two,
+    #three {
+        overflow: hidden;
+    }
+
+    #one {
+        height: 100vh;
+        .logo {
+            position: absolute;
+            z-index: 2;
+            left: 100px;
+            top: 40px;
+            font-size: 1.5em;
+            text-transform: uppercase;
+        }
+
+        .left {
+            position: absolute;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            background: $primaryWhite;
+            clip-path: polygon(0 0, 40% 0, 50% 100%, 0% 100%);
+
+            .text {
+              padding: 100px;
+              width: 50%;
+
+              button {
+                border: 2px solid $bgColor;
+                // border-radius: 5px;
+                text-transform: uppercase;
+                font-weight: 600;
+
+                a {
+                  background: $primaryWhite;
+                  color: $bgColor;
+                  font-size: .9em;
+                  padding: 1em 2em;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  position: relative;
+                  border-radius: 5px;
+                  transition: all .3s;
+
+                  &:hover {
+                    letter-spacing: 2px;
+                  }
+
+                  &::before {
+                    content: 'Zobacz więcej';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: -1;
+                    padding: 1em;
+                    overflow: hidden;
+
+                    background: $bgColor;
+                    color: $primaryWhite;
+                    clip-path: circle(0% at 50% 50%);
+                    // clip-path: polygon(0% 0%, 0% 0%,-1em 100% , -1em 100%);
+                    transition: clip-path .3s, z-index .3s;
+                  }
+
+                  &:hover:before {
+                    z-index: 1000;
+                    clip-path: circle(100% at 50% 50%);
+                    // clip-path: polygon(0% 0%,calc(100% + 1em) 0%,100% 100% , -1em 100%);
+
+                  }
+                }
+
+              }
+            }
+        }
+
+        .right {
+            img {
+                display: block;
+                position: absolute;
+                right: -20%;
+                // margin: 15vh 0 5vh 0;
+                height: 100vh;
+            }
+        }
+
+    }
+
+    #two {
+        height: 100vh;
+        .left {
+            img {
+                display: block;
+                position: absolute;
+                left: -10%;
+                // margin: 15vh 0 5vh 0;
+                height: 100vh;
+            }
+        }
+
+        .right {
+            height: 100%;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            background: $primaryWhite;
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 40% 100%);
+
+            .text {
+                padding: 100px;
+                width: 55%;
+            }
+        }
+    }
+
+    #three {
+        height: 100vh;
+        .left {
+            position: absolute;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            background: $primaryWhite;
+            clip-path: polygon(0 0, 40% 0, 50% 100%, 0% 100%);
+
+            .text {
+                    padding: 100px;
+                    width: 45%;
+            }
+        }
+
+        .right {
+            img {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                // margin: 15vh 0 5vh 0;
+                height: 100vh;
+            }
+        }
+    }
+
+    #footer {
+        font-size: .9em;
+        color: $primaryWhite;
+        display: flex;
+        justify-content: space-between;
+
+
+        p {
+            margin: 0;
+        }
+
+        a {
+            color: $bgColor;
+
+            &:hover {
+                color: $primaryWhite;
+            }
+        }
+        .left,
+        .right {
+            padding: 40px 100px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left {
+            color: $bgColor;
+            width: 100vw;
+            clip-path: polygon(0 0, 50% 0, 53% 100%, 0% 100%);
+            background: $GrayT;
+        }
+
+        .right {
+            position: absolute;
+            right: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5em;
+
+            i {
+                display: block;
+                background: $primaryWhite;
+                color: $bgColor;
+                padding: .4em;
+                border-radius: 5px;
+                transition: .3s;
+                cursor: pointer;
+
+                &:hover {
+                    background: $GrayT;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    body {
+            main {
+                #one {
+                    .left {
+                        background: $WhiteT;
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    
+                        .text {
+                            width: 100%;
+                            button {
+                                background: rgba(0, 0, 0, 0);
+                                a {
+                                    background: rgba(0, 0, 0, 0);
+                                }
+                            }
+                        }
+                    }
+                    .right {
+                        filter: $blur;
+                    }
+                }
+                #two {
+                    .left {
+                        filter: $blur;
+                    }
+                    .right {
+                        background: $WhiteT;
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    
+                        .text {
+                            width: 100%;
+                        }
+                    }
+                }
+                #three {
+                    .left {
+                        background: $WhiteT;
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    
+                        .text {
+                            width: 100%;
+                        }
+                    }
+                    .right {
+                        filter: $blur;
+                        img {
+                            position: relative;
+                        }
+                    }
+                }
+                #footer {
+                    .left {
+                        background: $GrayT;
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .right {
+                        i {
+                            background: $bgColor;
+                            color: $primaryWhite;
+
+                            &:hover {
+                                color: $bgColor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } 
+
+@media only screen and (max-width: 586px) {
+    body {
+        font-size: .6em;
+        nav {
+            .menu {
+                font-size: 1.5em;
+                width: 100vw;
+
+                button {
+                    font-size: 1em;
+                }
+            }
+        }
+
+        main {        
+            &.slide {
+                left: -100vw;
+            }
+            #one {
+                .logo {
+                    left: 40px;
+                }
+                .left {
+                    .text {
+                        padding: 10px 40px;
+                    }
+                }
+            }
+            #two {
+                .right {
+                    .text {
+                        padding: 10px 40px;
+                    }
+                }
+            }
+            #three {
+                .left {
+                    .text {
+                        padding: 10px 40px;
+                    }
+                }
+            }
+            #footer {
+                font-size: 1.2em;
+                display: flex;
+                flex-direction: column;
+
+                .right {
+                    position: relative;
+                }
+            }
+        }
+    }
+}
