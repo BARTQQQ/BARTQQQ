@@ -410,6 +410,7 @@ main #footer .right i {
   background: #ededed;
   color: #121212;
   padding: .4em;
+  transform: rotate(90deg);
   border-radius: 5px;
   transition: .3s;
   cursor: pointer;
