@@ -467,6 +467,10 @@ main {
 @media only screen and (max-width: 1080px) {
     body {
             main {
+                #img {
+                    visibility: hidden;
+                }
+
                 #one {
                     .left {
                         background: $WhiteT;

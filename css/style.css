@@ -425,6 +425,9 @@ main #footer .right a p:hover {
 }
 
 @media only screen and (max-width: 1080px) {
+  body main #img {
+    visibility: hidden;
+  }
   body main #one .left {
     background: rgba(237, 237, 237, 0.788);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
