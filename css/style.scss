@@ -467,9 +467,6 @@ main {
 @media only screen and (max-width: 1080px) {
     body {
             main {
-                #img {
-                    visibility: hidden;
-                }
 
                 #one {
                     .left {
@@ -488,11 +485,13 @@ main {
                     }
                     .right {
                         filter: $blur;
+                        display: none;
                     }
                 }
                 #two {
                     .left {
                         filter: $blur;
+                        display: none;
                     }
                     .right {
                         background: $WhiteT;
@@ -514,6 +513,7 @@ main {
                     }
                     .right {
                         filter: $blur;
+                        display: none;
                         img {
                             position: relative;
                         }

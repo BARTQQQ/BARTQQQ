@@ -425,9 +425,6 @@ main #footer .right a p:hover {
 }
 
 @media only screen and (max-width: 1080px) {
-  body main #img {
-    visibility: hidden;
-  }
   body main #one .left {
     background: rgba(237, 237, 237, 0.788);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -443,9 +440,11 @@ main #footer .right a p:hover {
   }
   body main #one .right {
     filter: blur(10px);
+    display: none;
   }
   body main #two .left {
     filter: blur(10px);
+    display: none;
   }
   body main #two .right {
     background: rgba(237, 237, 237, 0.788);
@@ -463,6 +462,7 @@ main #footer .right a p:hover {
   }
   body main #three .right {
     filter: blur(10px);
+    display: none;
   }
   body main #three .right img {
     position: relative;
