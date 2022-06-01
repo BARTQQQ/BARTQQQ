@@ -425,6 +425,7 @@ main #footer .right a p:hover {
 }
 
 .h1-404 {
+  background: linear-gradient(0deg, rgba(18, 18, 18, 0.2) 0%, #ededed 100%);
   width: 100vw;
   height: 100vh;
   display: flex;
