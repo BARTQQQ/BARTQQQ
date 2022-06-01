@@ -1,0 +1,11 @@
+//Rewrite to www
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^https://bartqqq.github.io/[nc]
+RewriteRule ^(.*)$ http://www.https://bartqqq.github.io//$1 [r=301,nc]
+
+//Custom 404 errors
+ErrorDocument 404 404.html
+
+//Change default directory page
+DirectoryIndex index.html
