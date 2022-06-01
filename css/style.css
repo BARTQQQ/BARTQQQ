@@ -424,6 +424,18 @@ main #footer .right a p:hover {
   background: rgba(135, 135, 135, 0.616);
 }
 
+.h1-404 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h1-404 b {
+  font-size: 5em;
+}
+
 @media only screen and (max-width: 1080px) {
   body main #one .left {
     background: rgba(237, 237, 237, 0.788);

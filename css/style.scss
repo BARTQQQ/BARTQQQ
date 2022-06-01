@@ -464,6 +464,17 @@ main {
     }
 }
 
+.h1-404 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    b {
+        font-size: 5em;
+    }
+}
+
 @media only screen and (max-width: 1080px) {
     body {
             main {
